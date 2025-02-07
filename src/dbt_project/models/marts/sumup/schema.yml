@@ -60,6 +60,6 @@ models:
       - name: store_name
         description: Name of store.
       - name: average_time
-        description: Average time duration in seconds of its first 5 transactions.
+        description: Average time duration in timestamp difference of its first 5 transactions.
       - name: etl_updated
         description: Timestamp when the row was last updated by the DBT pipeline.

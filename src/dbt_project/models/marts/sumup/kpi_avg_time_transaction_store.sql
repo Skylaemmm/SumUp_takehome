@@ -24,7 +24,7 @@ base as (
     select
         *,
         extract(
-            second from age(created_at, happened_at)
+            epoch from age(created_at, happened_at)
         ) as timediff
     from txns
     where rn <= 5
