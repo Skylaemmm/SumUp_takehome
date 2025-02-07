@@ -2,9 +2,7 @@
 	config(
 		materialized = 'incremental',
 		tags = ['sched_h_2', 'transactions'],
-        indexes=[
-          {'columns': ['txn_id'], 'unique': True }
-        ]
+		indexes=[{'columns': ['txn_id'], 'unique': True }]
 	)
 }}
 
@@ -48,4 +46,4 @@ from {{ source('sumup', 'transactions') }} as t
 inner join {{ source('sumup', 'device') }} as d on t.device_id = d.id
 inner join {{ source('sumup', 'store') }} as s on d.store_id = s.id
 where 1=1
-{ {run_setup }}
+{{run_setup}}

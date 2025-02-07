@@ -9,6 +9,7 @@ from typing import Any
 # BaseModel is cool because it takes care of validation
 # We use model_dump() which returns a dictionary of the model's fields and values and feed this into dictConfig to configure the logger
 
+
 class LoggerConfig(BaseModel):
     """Logging configuration."""
 
@@ -44,6 +45,7 @@ class LoggerConfig(BaseModel):
         "file_logger": {"handlers": ["console", "file"], "level": "INFO"},
         "basic_logger": {"handlers": ["console"], "level": "INFO"},
     }
+
 
 def get_logger(logger_name: str) -> logging.Logger:
     """Get logger by name.
