@@ -8,11 +8,9 @@ This project outlines a data pipeline designed to process Excel files received f
 1) Data Ingestion:
     - Receive .xlsx files from stakeholders containing raw data.
     - Convert these Excel files into .csv format using a Python script, as PostgreSQL cannot directly ingest Excel files.
-    - 
 2) Data Loading:
    - Load the transformed .csv files into PostgreSQL, creating source tables.
    - During this process, sensitive information such as card_number and cvv is excluded to adhere to data privacy standards.
-
 3) Data Modeling with dbt:
    - Staging Models:
      - Combine data from the three source tables into a unified staging model representing all transaction information.
