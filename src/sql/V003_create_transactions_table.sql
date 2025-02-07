@@ -1,4 +1,4 @@
-CREATE TABLE private.transactions (
+CREATE TABLE public.transactions (
     id                  INTEGER,
     device_id           INTEGER,
     product_name        VARCHAR(100),

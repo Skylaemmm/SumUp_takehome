@@ -5,9 +5,8 @@ import csv
 import os
 import logging
 
-import py_logging as log
-
-logger: logging.Logger = log.get_logger("basic_logger")
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 PATH = "src/data/"
 
@@ -36,9 +35,9 @@ def main():
     xlsx_files = [f for f in all_files if f.endswith(".xlsx")]
 
     for xlsx_file in xlsx_files:
-        xlsx_to_csv(xlsx_file)
+        xlsx_to_csv(f"{PATH}/{xlsx_file}")
 
-    logger(f"All xlsx filers under {PATH} finished.")
+    logger.info(f"All xlsx filers under {PATH} finished.")
     return
 
 
