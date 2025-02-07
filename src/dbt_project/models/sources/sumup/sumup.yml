@@ -1,0 +1,57 @@
+version: 2
+sources:
+- name: sumup
+  description: '{{ doc("datasource__sumup") }}'
+  schema: public
+  tables:
+  - name: device
+    description: '{{ doc("table__device") }}'
+    columns:
+    - name: id
+      description: Primary key for the table, unique id of the device.
+    - name: device
+      description:  Different types of devices (1 to 5).
+    - name: store_id
+      description: Unique id of each store.
+
+  - name: store
+    description: '{{ doc("table__store") }}'
+    columns:
+    - name: id
+      description: Primary key for the table, unique id of the store.
+    - name: name
+      description: Name of the store.
+    - name: address
+      description: Address of the store.
+    - name: city
+      description: City where the store locates.
+    - name: country
+      description: Country where the store locates.
+    - name: created_at
+      description: Timestamp when was the row created.
+    - name: typology
+      description: Typology of the store.
+    - name: customer_id
+      description: Unique ID of the customer who owns the store.
+
+  - name: transactions
+    description: '{{ doc("table__transactions") }}'
+    columns:
+    - name: id
+      description: Primary key for the table, unique id of the transaction.
+    - name: device_id
+      description: Device id on which this transaction happened.
+    - name: product_name
+      description: Product name on which this transaction happened.
+    - name: product_sku
+      description: Product sku on which this transaction happened.
+    - name: category_name
+      description: Category  on which this transaction happened.
+    - name: amount
+      description: Amount of this transaction.
+    - name: status
+      description: Status of this transaction.
+    - name: created_at
+      description: Timestamp when was the transaction created.
+    - name: happened_at
+      description: Timestamp when was the transaction happened.

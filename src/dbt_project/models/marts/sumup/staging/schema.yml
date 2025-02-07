@@ -1,0 +1,48 @@
+version: 2
+
+models:
+
+- name: stg_transactions
+  description: Models that combine transaction data with device and store information.
+  columns:
+  - name: txn_id
+    description: Unique id of transaction.
+    tests:
+    - unique
+    - not_null
+  - name: device_id
+    description: Unique id of the device on which this transaction happened.
+  - name: device_type
+    description: Device type on which this transaction happened.
+  - name: product_name
+    description: Product name on which this transaction happened.
+  - name: product_sku
+    description: Product sku on which this transaction happened.
+  - name: category_name
+    description: Category  on which this transaction happened.
+  - name: amount
+    description: Amount of this transaction.
+  - name: status
+    description: Status of this transaction.
+  - name: created_at
+    description: Timestamp when was the transaction created.
+  - name: happened_at
+    description: Timestamp when was the transaction happened.
+  - name: store_id
+    description: Unique id of the store.
+  - name: store_name
+    description: Name of the store.
+  - name: store_address
+    description: Address of the store.
+  - name: store_city
+    description: City of the store.
+  - name: store_country
+    description: Country of the store.
+  - name: store_created_at
+    description: Timestamp when the store was created.
+  - name: store_typology
+    description: Typology of the store.
+  - name: customer_id
+    description: Unique id of the customer who owns the store
+  - name: etl_updated
+    description: Timestamp when the row was last updated by the DBT pipeline.
