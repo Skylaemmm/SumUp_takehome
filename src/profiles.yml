@@ -1,9 +1,9 @@
-dbt-proj:
+dbt-project:
   target: dev
   outputs:
     dev:
       type: postgres
-      host: postgres
+      host: localhost
       user: postgres
       pass: postgres
       port: 5432

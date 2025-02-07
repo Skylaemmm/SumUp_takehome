@@ -9,7 +9,7 @@
 {% set run_setup %}
     {% if is_incremental() %}
     -- better to use etl_updated from the source so that we capture all updated rows
-        and t.created_at >= (select dateadd(day, -1, max(t.created_at)) from {{ this }})
+        and t.created_at >= (select max(t.created_at) - interval '1 day') from {{ this }})
     {% endif %}
 
     {% if not is_incremental() %}

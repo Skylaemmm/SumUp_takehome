@@ -17,7 +17,7 @@ with txns as (
                 order by happened_at
             )
         as rn
-    from { ref('enriched_transactions') }}
+    from { ref('stg_transactions') }}
 ),
 
 base as (
@@ -32,6 +32,7 @@ base as (
 
 select
     store_name,
-    avg(timediff) as average_time
+    avg(timediff) as average_time,
+    sysdate as etl_updated
 from base
 group by 1

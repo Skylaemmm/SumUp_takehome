@@ -13,6 +13,8 @@ models:
         description: Total amount of the store transacted.
       - name: rank
         description: Rank of the store based on total_amount
+      - name: etl_updated
+        description: Timestamp when the row was last updated by the DBT pipeline.
 
   - name: champion_products
     description: Top 10 products sold.
@@ -23,6 +25,8 @@ models:
         description: Total amount of the product sold.
       - name: rank
         description: Rank of the product based on total_amount
+      - name: etl_updated
+        description: Timestamp when the row was last updated by the DBT pipeline.
 
   - name: kpi_avg_amount_store
     description: Average transacted amount per store typology and country.
@@ -33,6 +37,8 @@ models:
         description: Country of the store.
       - name: average_amount
         description: Average amount value.
+      - name: etl_updated
+        description: Timestamp when the row was last updated by the DBT pipeline.
 
   - name: kpi_amount_device
     description: Percentage of transactions per device type.
@@ -45,7 +51,8 @@ models:
         description: Total amount value.
       - name: percentage
         description: Percentage value.
-
+      - name: etl_updated
+        description: Timestamp when the row was last updated by the DBT pipeline.
 
   - name: kpi_avg_time_transaction_store
     description: Average time for a store to perform its 5 first transactions.
@@ -54,3 +61,5 @@ models:
         description: Name of store.
       - name: average_time
         description: Average time duration in seconds of its first 5 transactions.
+      - name: etl_updated
+        description: Timestamp when the row was last updated by the DBT pipeline.

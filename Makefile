@@ -17,7 +17,7 @@ down:
 # Convert XLSX to CSV
 .PHONY: convert_csv
 convert_csv:
-	@echo "Converting XLSX to CSV..."
+	@echo "Converting XLSX to CSV...";\
 	python3 src/scripts/xlsx_to_csv.py
 
 # Create tables and load data
@@ -32,6 +32,8 @@ execute_sql:
 # Run dbt models
 .PHONY: run_dbt
 run_dbt:
-	@echo "Running dbt models..."
-	dbt build --profiles-dir $(DBT_PROFILES_DIR)
+	@echo "Running stg dbt models...";\
+	dbt run --profiles-dir $(DBT_PROFILES_DIR) --models stg_transactions --full-refresh;\
+	echo "Running reporting dbt models...";\
+	dbt run --profiles-dir $(DBT_PROFILES_DIR) --select tag:reporting
 

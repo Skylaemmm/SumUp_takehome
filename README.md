@@ -16,7 +16,7 @@ This project outlines a data pipeline designed to process Excel files received f
 3) Data Modeling with dbt:
    - Staging Models:
      - Combine data from the three source tables into a unified staging model representing all transaction information.
-     Configure this staging model as an incremental model in dbt to process only new or updated records, enhancing efficiency.
+     - Configure this staging model as an incremental model in dbt to process only new or updated records, enhancing efficiency.
    - KPI Models:
      - Develop individual dbt models to address specific business questions, each materialized as a materialized view.
      - This approach ensures that stakeholders access the most recent data upon querying, with materialized views refreshed based on the staging model's update schedule.
@@ -31,16 +31,6 @@ This project outlines a data pipeline designed to process Excel files received f
 - Containerization:
   - A Docker container is set up to host the PostgreSQL database and dbt environment, ensuring consistency across development setups.
 
-## Setup and Execution
-1) Prerequisites:
- - Ensure Docker is installed on your system.
-
-2) Execution:
-
-
-3) Cleaning Up:
- - Use make clean to remove generated CSV files and stop Docker services.
-
 ## Considerations
 - Data Privacy: Sensitive information is excluded during the data loading process to comply with data protection regulations.
 
@@ -48,4 +38,6 @@ This project outlines a data pipeline designed to process Excel files received f
 
 - Performance: Incremental models in dbt are utilized to optimize performance by processing only new or updated records.
 
-By following this approach, the pipeline efficiently processes stakeholder data, maintains data integrity, and provides timely insights through well-structured data models.
+## Next Step
+- Better Python logger script and potential Datadog integration for monitoring
+- Data Lineage Diagram

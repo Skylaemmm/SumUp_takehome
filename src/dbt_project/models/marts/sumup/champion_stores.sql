@@ -11,7 +11,7 @@ with total as (
         store_id,
         store_name,
         sum(amount) as total_amount
-    from {{ ref('enriched_transactions') }}
+    from {{ ref('stg_transactions') }}
     where status = 'accepted'
     group by 1,2
 ),
@@ -28,6 +28,7 @@ select
     store_id,
     store_name,
     total_amount,
-    rank
+    rank,
+    sysdate as etl_updated
 from total_rank
 where rank <= 10

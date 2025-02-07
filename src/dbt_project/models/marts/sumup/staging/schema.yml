@@ -2,7 +2,7 @@ version: 2
 
 models:
 
-- name: enriched_transactions
+- name: stg_transactions
   description: Models that combine transaction data with device and store information.
   columns:
   - name: txn_id
